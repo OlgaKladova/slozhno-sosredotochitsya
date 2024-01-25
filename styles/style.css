@@ -4,7 +4,7 @@
   /* сохраните в разметке и стилях класс page. На его основе работает скрипт. */
   padding: var(--distance);
   background-color: var(--bg-color);
-  font-family: var(--main-font), sans-serif;
+  font-family: var(--main-font), monospace;
   font-size: 18px;
   color: var(--text-color);
   font-weight: 400;
@@ -22,7 +22,8 @@
   grid-template-rows: 1fr min-content 1fr;
   grid-template-columns: repeat(2, 1fr);
   inline-size: 100%;
-  block-size: calc(100vh - 2 * var(--distance));
+  block-size: 100vh;
+  min-block-size: 668px;
   color: var(--accent-color);  
   margin-block-end: var(--distance);
 }
@@ -93,7 +94,8 @@
 .decoration-element {
   position: absolute;
   inset-inline-end: 28px;
-  inset-block-start: 0;    
+  inset-block-start: 0;   
+  text-transform: uppercase; 
 }
 
 .decoration-element::after {
@@ -154,20 +156,20 @@
   grid-column: 2/3;
 }
 
-a {
+.link {
   text-decoration: none;
   text-shadow: 4px 4px 0px var(--accent-color);
 }
 
-a:hover {
+.link:hover {
   text-decoration: underline;
 }
 
-a:focus {
+.link:focus {
   outline: none;
 }
 
-a:focus-visible {
+.link:focus-visible {
   outline: 1px solid var(--text-color);
   outline-offset: -3px;
 }
@@ -271,7 +273,8 @@ a:focus-visible {
 .footer {
   position: relative;
   inline-size: 100%;
-  block-size: calc(100vh - 2 * var(--distance));
+  block-size: 100vh;
+  min-block-size: 668px;
   display: grid;
   margin-block-start: var(--distance);
 }
